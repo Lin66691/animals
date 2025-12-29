@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>萌犬图鉴 - 了解不同犬种的样貌与性格</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        header h1 {
+            margin-bottom: 0.5rem;
+        }
+        nav {
+            background-color: #388E3C;
+            padding: 0.8rem;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: 500;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .dog-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .dog-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .dog-card:hover {
+            transform: translateY(-5px);
+        }
+        .dog-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .dog-info {
+            padding: 1.5rem;
+        }
+        .dog-info h3 {
+            color: #2E7D32;
+            margin-bottom: 0.8rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.5rem;
+        }
+        .dog-info p {
+            margin-bottom: 0.8rem;
+        }
+        .dog-info .label {
+            font-weight: bold;
+            color: #4CAF50;
+        }
+        /* 新增关于本站区域样式，保持整体风格统一 */
+        .about-section, .breeds-section {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        .about-section h2, .breeds-section h2 {
+            color: #2E7D32;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 0.8rem;
+        }
+        .about-section p, .breeds-section p {
+            margin-bottom: 1.2rem;
+            text-indent: 2em;
+        }
+        .about-section ul {
+            margin-left: 2rem;
+            margin-bottom: 1.2rem;
+        }
+        .about-section li {
+            margin-bottom: 0.8rem;
+        }
+        footer {
+            background-color: #388E3C;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 3rem;
+        }
+        /* 锚点跳转平滑滚动（优化体验，可选保留） */
+        html {
+            scroll-behavior: smooth;
+        }
+        @media (max-width: 768px) {
+            .dog-container {
+                grid-template-columns: 1fr;
+            }
+            nav a {
+                display: block;
+                margin: 0.5rem 0;
+            }
+            .about-section, .breeds-section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>萌犬图鉴</h1>
+        <p>探索不同犬种的独特样貌与性格魅力</p>
+    </header>
+
+    <nav>
+        <!-- 为三个链接添加锚点超链接，对应下方各区域的id -->
+        <a href="#home">首页</a>
+        <a href="#breeds">犬种大全</a>
+        <a href="#about">关于本站</a>
+    </nav>
+
+    <main>
+        <!-- 1. 首页区域（对应锚点#home） -->
+        <section id="home">
+            <h2>常见犬种介绍</h2>
+            <p>每一种狗狗都有其独特的外貌特征和性格特点，下面为你介绍几种热门犬种的核心特征：</p>
+
+            <div class="dog-container">
+                <!-- 1. 拉布拉多寻回犬（图片链接不变） -->
+                <div class="dog-card">
+                    <img src="https://ts2.tc.mm.bing.net/th/id/OIP-C.kAMCjX7G_1inCivhWgX_7QHaHN?rs=1&pid=ImgDetMain&o=7&rm=3" alt="拉布拉多犬" class="dog-img">
+                    <div class="dog-info">
+                        <h3>拉布拉多寻回犬</h3>
+                        <p><span class="label">样貌特征：</span>体型中等偏大，短毛顺滑，常见黑色、黄色、巧克力色三种毛色，头部圆润，眼神温和，尾巴呈水獭尾状。</p>
+                        <p><span class="label">性格特点：</span>活泼温顺、智商出众、无攻击性，适应能力强，是优秀的家庭伴侣、导盲犬和搜救犬。</p>
+                    </div>
+                </div>
+
+                <!-- 2. 萨摩耶犬（图片链接不变） -->
+                <div class="dog-card">
+                    <img src="https://img0.baidu.com/it/u=2458132852,3442024736&fm=253&app=138&f=JPEG?w=800&h=936" alt="萨摩耶犬" class="dog-img">
+                    <div class="dog-info">
+                        <h3>萨摩耶犬</h3>
+                        <p><span class="label">样貌特征：</span>中型犬，全身覆盖洁白浓密的双层长毛，微笑唇形极具辨识度，立耳卷曲尾，体态优雅轻盈。</p>
+                        <p><span class="label">性格特点：</span>开朗热情、活泼好动、对人友善，有“微笑天使”之称，精力旺盛需要充足运动。</p>
+                    </div>
+                </div>
+
+                <!-- 3. 贵宾犬（图片链接不变） -->
+                <div class="dog-card">
+                    <img src="https://pics3.baidu.com/feed/902397dda144ad349d63c0bf4f3094fb30ad8548.jpeg@f_auto?token=fa463550760a65da72dc6298211d8566" alt="贵宾犬" class="dog-img">
+                    <div class="dog-info">
+                        <h3>贵宾犬</h3>
+                        <p><span class="label">样貌特征：</span>分迷你、标准、巨型三种体型，毛发卷曲蓬松，可修剪成多种造型，眼神灵动，体态匀称优雅。</p>
+                        <p><span class="label">性格特点：</span>聪明伶俐、活泼好动、忠诚度高，学习能力强，适应城市生活，掉毛量极少适合过敏人群。</p>
+                    </div>
+                </div>
+
+                <!-- 4. 比熊犬（图片链接不变） -->
+                <div class="dog-card">
+                    <img src="https://q9.itc.cn/q_70/images01/20240524/24c0496676fc4ed9af56679758ab4abe.jpeg" alt="比熊犬" class="dog-img">
+                    <div class="dog-info">
+                        <h3>比熊犬</h3>
+                        <p><span class="label">样貌特征：</span>小型犬，全身覆盖洁白蓬松的卷毛，眼睛圆大黑亮，尾巴卷曲贴背，步态轻盈可爱，自带“棉花糖”既视感。</p>
+                        <p><span class="label">性格特点：</span>温顺粘人、活泼开朗、好奇心强，对主人依赖度高，无攻击性，适合作为伴侣犬饲养。</p>
+                    </div>
+                </div>
+
+                <!-- 5. 德国牧羊犬（图片链接不变） -->
+                <div class="dog-card">
+                    <img src="https://img2.baidu.com/it/u=3102911722,3348972560&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=1422" alt="德国牧羊犬" class="dog-img">
+                    <div class="dog-info">
+                        <h3>德国牧羊犬</h3>
+                        <p><span class="label">样貌特征：</span>中型偏大犬，黑背黄腹经典配色，体型矫健匀称，立耳呈三角形，眼神锐利，极具威慑力与美感。</p>
+                        <p><span class="label">性格特点：</span>忠诚护主、智商高、警惕性强，服从性极佳，是优秀的军警犬、护卫犬，对家人温顺亲近。</p>
+                    </div>
+                </div>
+
+                <!-- 6. 吉娃娃（图片链接不变） -->
+                <div class="dog-card">
+                    <img src="https://q8.itc.cn/q_70/images01/20250704/9ae6cea53f2e4bf69c373d6f4da65cfe.jpeg" alt="吉娃娃" class="dog-img">
+                    <div class="dog-info">
+                        <h3>吉娃娃</h3>
+                        <p><span class="label">样貌特征：</span>超小型犬，体型小巧玲珑，有短毛和长毛两种，眼睛大而突出，耳朵直立，毛色多样，体态娇小可爱。</p>
+                        <p><span class="label">性格特点：</span>聪明伶俐、警惕性高、对主人忠诚，性格略显傲娇，占有欲强，运动量小，适合小户型饲养。</p>
+                    </div>
+                </div>
+
+                <!-- 7. 金毛寻回犬（图片链接不变） -->
+                <div class="dog-card">
+                    <img src="https://img2.baidu.com/it/u=2656618184,4227116481&fm=253&app=138&f=JPEG?w=800&h=1067" alt="金毛犬" class="dog-img">
+                    <div class="dog-info">
+                        <h3>金毛寻回犬</h3>
+                        <p><span class="label">样貌特征：</span>体型中等偏大，毛发呈金黄色且浓密柔软，头部宽阔，眼睛友善，尾巴自然下垂，步态稳健优雅。</p>
+                        <p><span class="label">性格特点：</span>温顺友善、智商高、极具耐心，对人尤其是儿童非常友好，是优秀的家庭伴侣犬和导盲犬。</p>
+                    </div>
+                </div>
+
+                <!-- 8. 西伯利亚哈士奇（图片链接不变） -->
+                <div class="dog-card">
+                    <img src="https://vd3.bdstatic.com/mda-rh05787chrpqwq5f/1754019648/mda-rh05787chrpqwq5f00025000.jpg?for=bg" alt="哈士奇" class="dog-img">
+                    <div class="dog-info">
+                        <h3>西伯利亚哈士奇</h3>
+                        <p><span class="label">样貌特征：</span>中型犬，双层毛发，常见黑白/灰白配色，耳朵直立呈三角形，眼睛多为蓝色或棕色，面部有标志性的“面具”纹路。</p>
+                        <p><span class="label">性格特点：</span>活泼好动、好奇心强、精力旺盛，有点“拆家”属性，对陌生人也比较友好，服从性相对较低。</p>
+                    </div>
+                </div>
+
+                <!-- 9. 威尔士柯基犬（图片链接不变） -->
+                <div class="dog-card">
+                    <img src="https://q4.itc.cn/images01/20250715/f0be3f3bc04747e2be582c913bc4f514.jpeg" alt="柯基犬" class="dog-img">
+                    <div class="dog-info">
+                        <h3>威尔士柯基犬</h3>
+                        <p><span class="label">样貌特征：</span>小型犬，腿短身长腿，臀部圆润，耳朵直立呈狐狸耳状，毛发多为黄白配色，有标志性的“围脖”毛发。</p>
+                        <p><span class="label">性格特点：</span>聪明机灵、活泼开朗、警惕性高，对主人忠诚，喜欢粘人，同时也有一定的护主意识。</p>
+                    </div>
+                </div>
+
+                <!-- 10. 柴犬（图片链接不变） -->
+                <div class="dog-card">
+                    <img src="https://qcloud.dpfile.com/pc/kYBiOc6eVFPonWUJrkFJ1PuKZD0woWMNffPUO1o-7MUGyaPZkKBgPQGrAVtDL27K.jpg" alt="柴犬" class="dog-img">
+                    <div class="dog-info">
+                        <h3>柴犬</h3>
+                        <p><span class="label">样貌特征：</span>小型犬，体型匀称，毛发为赤棕色/黑色，立耳卷尾，面部表情丰富，自带“治愈系”笑容。</p>
+                        <p><span class="label">性格特点：</span>独立傲娇、自尊心强、警惕性高，对主人忠诚但不粘人，有一定的领地意识，训练需有耐心。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. 犬种大全区域（对应锚点#breeds，补充详细说明） -->
+        <section id="breeds" class="breeds-section">
+            <h2>犬种大全</h2>
+            <p>本站收录的10种犬种涵盖了小型、中型、中大型各类体型，兼顾了家庭饲养、工作用途等多种场景，是经过精心筛选的热门犬种。</p>
+            <p>这些犬种在全球范围内都拥有较高的人气，无论是作为伴侣犬陪伴家人，还是作为工作犬承担特殊任务，都展现出了极强的价值。</p>
+            <p>后续本站将持续更新更多犬种内容，包括柯利牧羊犬、斗牛犬、雪纳瑞等热门品种，敬请关注！</p>
+        </section>
+
+        <!-- 3. 关于本站区域（新增，对应锚点#about，完整内容） -->
+        <section id="about" class="about-section">
+            <h2>关于本站</h2>
+            <p>萌犬图鉴是一个专注于犬种知识分享的公益性个人网站，创办于2025年，旨在为广大爱狗人士提供全面、准确、易懂的犬种科普内容。</p>
+            <p>我们深知，选择一只适合自己的狗狗是一件需要谨慎对待的事情，不同的犬种有着不同的饲养需求、性格特点和生活习性，本站的核心目标就是帮助大家快速了解各类犬种的核心特征，为养犬决策提供参考。</p>
+            <p>本站的核心优势：</p>
+            <ul>
+                <li>内容精准：所有犬种信息均经过多方查证，确保样貌特征和性格特点的准确性。</li>
+                <li>视觉直观：采用卡片式布局搭配高清图片，让大家能够直观感受各类犬种的外貌魅力。</li>
+                <li>响应式设计：支持电脑、手机等多种设备访问，随时随地查看犬种信息。</li>
+                <li>公益无广告：本站无任何商业广告，所有内容均免费分享给爱狗人士。</li>
+            </ul>
+            <p>如果你也是一名爱狗人士，有想要补充的犬种知识，或者有养犬过程中的经验分享，欢迎通过站内预留方式与我们联系（已经开放了留言功能）。</p>
+            <p>愿每一只狗狗都能被温柔以待，每一位养犬人士都能与自己的爱犬相伴一生！</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>萌犬图鉴 © 2025 - 专注分享犬种知识的个人网站</p>
+    </footer>
+</body>
+</html>
+        <p>萌犬图鉴 © 2025 - 专注分享犬种知识的个人网站</p>
+    </footer>
+</body>
+</html>
